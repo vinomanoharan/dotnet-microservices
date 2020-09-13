@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  dotnet.microservices.products.api:
+    container_name: productapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8002:80"
+
+  dotnet.microservices.auth.api:
+    container_name: authapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8001:80"
+
+
+  dotnet.microservices.ocelot.apigateway:
+    container_name: apigateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "9000:80"
+

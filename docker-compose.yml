@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  dotnet.microservices.products.api:
+    image: ${DOCKER_REGISTRY-}dotnetmicroservicesproductsapi
+    build:
+      context: .
+      dockerfile: Dotnet.Microservices.Products.API/Dockerfile
+    
+  dotnet.microservices.auth.api:
+    image: ${DOCKER_REGISTRY-}dotnetmicroservicesauthapi
+    build:
+      context: .
+      dockerfile: Dotnet.Microservices.Auth.API/Dockerfile
+
+  dotnet.microservices.ocelot.apigateway:
+    image: ${DOCKER_REGISTRY-}dotnetmicroservicesocelotapigateway
+    build:
+      context: .
+      dockerfile: Dotnet.Microservices.Ocelot.APIGateway/Dockerfile
